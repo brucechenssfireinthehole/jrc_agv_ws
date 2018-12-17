@@ -1,0 +1,7 @@
+<launch>
+  <!-- <master auto="start"/> -->
+  <param name="/use_sim_time" value="true"/>
+  <include file="$(find nav_car)/move_base_config/move_base_soccer.xml"/>
+  <!-- <include file="$(find navigation_stage)/move_base_config/amcl_node.xml"/>  -->
+  <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find navigation_stage)/single_robot.vcg" /> -->
+</launch>

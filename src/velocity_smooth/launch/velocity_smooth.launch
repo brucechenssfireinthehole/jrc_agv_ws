@@ -1,0 +1,9 @@
+<launch>
+<!--  velocity_smooth.launch file  1.speed control  2.serial port communication-->
+  
+  <node pkg="soccer_maxon" type="soccer_maxon_node" respawn="false" name="soccer_maxon_node" output="screen">
+  </node>
+
+  <node pkg="velocity_smooth" type="velocity_smooth" respawn="false" name="velocity_smooth" output="screen">
+  </node>
+</launch>

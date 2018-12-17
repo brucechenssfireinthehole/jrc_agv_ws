@@ -1,0 +1,63 @@
+point_1:  xyz 0.320 -0.044 0.000  quat 0.000 0.000 0.096 0.995  (yaw 0.191)
+point_2:  xyz 0.320 -0.044 0.000  quat 0.000 0.000 0.998 0.064  (yaw 3.014)
+
+point_1:  xyz -0.630 -0.119 0.000  quat 0.000 0.000 0.056 0.998  (yaw 0.219)
+point_2:  xyz 0.92 -0.119 0.000  quat 0.000 0.000 0.998 0.064  (yaw 3.014)
+
+
+group1 actual xy: 0.948 -0.06  actual yaw: 2.961
+group2 actual xy: 0.90  -0.11  actual yaw: 2.95
+
+
+-----------------
+test2->map::smooth_test2.pgm
+time: 2018.10.31 10:00pm
+author: cbb
+
+start point:[-0.257, -0.006, 0;
+            0, 0, 0.999, 0.038] 
+        yaw:3.065
+
+stop  point:[-3.049, 0, 0;
+            0, 0, 0.752, 0.659]
+        yaw:1.702
+
+
+-----------------
+test3->map::smooth_test3.pgm
+time:2018.11.6 11:00pm
+author: cbb
+
+start point:[-2.071, 0.206, 0;
+           0, 0, -0.688, 0.725]
+         yaw:-1.518
+
+stop point:[2.045,0.160,0;
+           0, 0, -0.031,0.999]
+         yaw:-0.062
+
+------------------
+test4->map::smooth_test4.pgm
+time:2018.11.20 4:40pm
+author: cbb
+
+start point:[-0.973, 0.024,0;
+           0, 0, -0.674, 0.739]
+          yaw:-1.480
+
+stop point:[3.037, 0.222, 0;
+           0, 0, -0.002, 0.9999]
+          yaw:-0.005
+-----------------
+test5->map::smooth_test4.pgm
+time:2018.11.25 3:30pm
+author: cbb
+
+start point:[-0.961,-0.069,0;
+            0,0,-0.691,0.723]
+          yaw:-1.526
+
+stop point:[3.037,0.172,0;
+           0,0,-0.002,0.9999];
+           yaw:-0.005
+

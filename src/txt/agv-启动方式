@@ -1,0 +1,25 @@
+(1)准备
+①打开agv电源,关闭急停,确认激光及交换机上电
+②将agv移动到出发点位置,对准出发点标签,注意agv朝向正确
+
+(2)运行
+①roslaunch agv_tcp_velocity laser.launch
+②roslaunch ira_laser_tools laserscan_multi_merger.launch
+③roslaunch laser_scan_matcher demo.launch
+④rosrun map_server map_server ~/*京东工作空间*/src/agv/map/smooth_test_4.yaml）
+⑤roslaunch amcl amcl_omni.launch
+⑥rosrun soccer_maxon soccer_maxon_node
+  开启串口通信程序,若显示串口权限不足错误,则开启权限:sudo chmod 666 /dev/ttyUSB0
+⑦rosrun velocity_smooth velocity_smooth  
+  开启agv部分service,
+  此时运行主程序,agv将会开始运动,注意避让.
+
+(3)重复运行
+①首先保证agv位于出发点位置,
+② -agv未断电且其位于出发点位置情况下,直接运行主程序即可;
+  -若agv断电重启,请重开service: rosrun velocity_smooth velocity_smooth.
+
+
+
+注:1.建议在每次开始运动前在rviz里观察一下激光定位与地图匹配是否准确,避免意外情况发生.
+   2.上述节点暂时不要在一个.sh文件里同时运行,否则ctrl-c退出时,后台程序无法完全退出,二次运行会出错.

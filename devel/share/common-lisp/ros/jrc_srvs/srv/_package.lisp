@@ -1,0 +1,15 @@
+(cl:defpackage jrc_srvs-srv
+  (:use )
+  (:export
+   "SMOOTH"
+   "<SMOOTH-REQUEST>"
+   "SMOOTH-REQUEST"
+   "<SMOOTH-RESPONSE>"
+   "SMOOTH-RESPONSE"
+   "SMOOTH_MULTI"
+   "<SMOOTH_MULTI-REQUEST>"
+   "SMOOTH_MULTI-REQUEST"
+   "<SMOOTH_MULTI-RESPONSE>"
+   "SMOOTH_MULTI-RESPONSE"
+  ))
+

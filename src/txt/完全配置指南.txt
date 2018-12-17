@@ -1,0 +1,77 @@
+#Author: Dosu
+#Date: 2018/11/5
+(1)
+①在ROS工作空间内编译安装以下package:
+  1.agv_tcp_velocity
+  2.ira_laser_tools 
+  3.move_forward
+  4.navigation-kinetic-devel (如ROS版本不是kinetic,请到 https://github.com/ros-planning/navigation 下载对应版本包)
+  注意: rosdep install --from-paths src --ignore-src --rosdistro kinetic -y 安装依赖项
+  5.urg_node-indigo-devel (此版本应该没问题,我的是kinetic的,也可以运行)
+  6.urg_c-master
+
+②apt-get安装以下package:
+  sudo apt-get install ros-%YOUR_ROS_DISTRO%-laser-scan-matcher
+
+③修改脚本文件:~workspace/src/move_forward/jrc_agv_amcl.sh
+  将 rosrun map_server map_server /home/brucechen/nav_ws/src/map_jrc.yaml&  其中map_jrc.yaml路径改为你电脑实际路径
+
+
+
+(2)
+①打开agv电源,关闭急停,PC端连接激光网口及交换机电源USB;
+②将agv移动到出发点位置;   //*************必须预先移动到出发点位置,否则后续定位会乱,因为是以出发点位置作为地图初始pose估计的*********************
+③连接 wifi:  USR-WIFI232-602_B454
+
+
+
+(3)
+① 运行脚本文件: ~workspace/src/move_forward/jrc_agv_amcl.sh  //启动定位
+② 运行通信程序: rosrun agv_tcp_velocity agv_tcp_velocity
+③ 运行service: rosrun move_forward jrc_move_server   
+④ 运行client: rosrun move_forward jrc_move_client   //agv将会从出发点开始运动,注意避让.   **********此文件是对service的调用,用户根据需要自行修改.*************
+
+
+
+(4)
+service 调用格式:
+具体参考 /move_forward/src/jrc_move_client.cpp 文件,文件中预先存有四个运动点 point[4],包括起始点/第一个抓取点/第二个抓取点/返回过渡点.
+
+//>>>>>>>>>>>>>>>对任意预存点的service调用格式如下:>>>>>>>>>>>>>>>>>>>
+ ros::NodeHandle node;
+ ros::ServiceClient client = node.serviceClient<move_forward::Jrc_move>("/Jrc_move");   // *********** service 发布节点是 :/Jrc_move *************
+ get_srv(srv, point[i]);       //point[i]是任意预存位置点
+    sleep(2);
+    if(client.call(srv))
+    {
+        ROS_INFO("success");
+        ROS_INFO("the response is %ld", (long int)srv.response.mark);
+    }
+    else
+    {
+        ROS_ERROR("Failed");
+    }
+//完成一次service调用,agv将会移动到对应的 point[i]点,并将res(srv.response.mark)值置 1,表示目标点已到,否则其为 0.
+
+//>>>>>>>>>>>其中get_srv函数如下:>>>>>>>>>>>>>>>>>>>>>>
+void get_srv(move_forward::Jrc_move& srv, geometry_msgs::Pose& point)
+{
+    geometry_msgs::Quaternion quat1;
+    quat1.x = point.orientation.x;
+    quat1.y = point.orientation.y;
+    quat1.z = point.orientation.z;
+    quat1.w = point.orientation.w;
+
+    srv.request.x = point.position.x;
+    srv.request.y = point.position.y;
+    srv.request.theta = tf::getYaw(quat1);
+}
+
+
+//Jrc_move  srv消息格式
+float64 x          //坐标x
+float64 y          //坐标y
+float64 theta      //转角
+---
+float64 mark       //标志位,1表示当前位置已到达,0表示当前位置未到达.
+

@@ -1,0 +1,9 @@
+<launch>
+  <!-- <master auto="start"/> -->
+  <param name="/use_sim_time" value="false"/>
+  
+  <include file="$(find nav_car)/move_base_config/move_base_soccer.xml"/>
+  <include file="$(find laser_scan_matcher)/demo/demo.launch"/>
+  <include file="$(find amcl)/examples/amcl_omni.launch"/>
+  <node name="map_sever"  pkg="map_sever" type="map_sever" args = "/home/huang/map.yaml" />
+</launch>

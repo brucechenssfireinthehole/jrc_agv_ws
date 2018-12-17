@@ -1,0 +1,35 @@
+配置过程
+1、github下载并且编译navigation包、sick_tim包；
+2、编译过程中遇到错误，直接复制到google，直接有答案。
+3、sudo apt-get install ros-kinetic-laser-scan-matcher用于提供激光里程计
+4、roscd laser_scan_matcher/demo
+5、sudo gedit demo_gmapping.launch。（注意use_sim_time变量，静态tf发布base_link到laser之间的坐标关系，laser_scan_matcher node中的fixed_frame 要是odom）
+
+/////////////////
+建图运行过程 
+urg_node
+1、读取激光信息（roslaunch agv_tcp_velocity laser.launch）
+2. 激光融合　（roslaunch ira_laser_tools laserscan_multi_merger.launch）
+3、运行gmapping程序（roslaunch laser_scan_matcher demo_gmapping.launch）
+4、保存已经建立的地图（rosrun map_server map_saver -f map_name）
+
+
+//定位运行过程
+1、读取激光信息（roslaunch agv_tcp_velocity laser.launch）
+2. 激光融合　（roslaunch ira_laser_tools laserscan_multi_merger.launch）
+3、运行激光里程计程序（roslaunch laser_scan_matcher demo.launch）
+4、提供已经建立的地图 （rosrun map_server map_server ~/ws/yuanxi_ws/map_name.yaml）
+5、运行AMCL程序(roslaunch amcl amcl_omni.launch
+)
+6、打开rviz，设置初始位姿，轻微移动获取可实现进一步收敛。
+
+7. 运行通信程序　　rosrun agv_tcp_velocity agv_tcp_velocity_node
+8．运行move_base程序　roslaunch nav_car move_base_amcl_2cm.launch   //move_base不用？？
+（注意连接下位机wifi: USR-WIFI232-602_B454）
+9.在rviz给定一个终点位置，应该可以跑动
+
+>>>>>>>>>>>>>>>>自己写一个消息发布节点，发布agv终点位置（固定位置）>>>>>>>>>>>>>>>>>>>>>>>
+agv键盘控制
+1. 运行通信程序　　rosrun agv_tcp_velocity agv_tcp_velocity_node
+2. 运行键盘控制程序　rosrun agv_tcp_velocity turtlebot_teleop_key
+(注意连接路由器wifi:USR-WIFI232-603_B454)

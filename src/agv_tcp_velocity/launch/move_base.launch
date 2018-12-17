@@ -1,0 +1,4 @@
+<launch>
+  <param name="/use_sim_time" value="false"/>
+  <include file="$(find agv_tcp_velocity)/move_base_config/move_base_agv.xml"/>
+</launch>

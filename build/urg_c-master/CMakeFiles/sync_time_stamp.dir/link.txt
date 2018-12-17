@@ -1,0 +1,1 @@
+/usr/bin/cc     CMakeFiles/sync_time_stamp.dir/current/samples/sync_time_stamp.c.o  -o /home/brucechen/nav_ws/devel/lib/urg_c/sync_time_stamp -rdynamic /home/brucechen/nav_ws/devel/lib/libopen_urg_sensor.so /home/brucechen/nav_ws/devel/lib/libliburg_c.so -lrt -lm -Wl,-rpath,/home/brucechen/nav_ws/devel/lib: 

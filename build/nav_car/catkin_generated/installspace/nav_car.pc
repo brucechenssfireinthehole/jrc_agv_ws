@@ -1,0 +1,8 @@
+prefix=/home/brucechen/nav_ws/install
+
+Name: nav_car
+Description: Description of nav_car
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/brucechen/nav_ws/install/lib 
+Requires: 

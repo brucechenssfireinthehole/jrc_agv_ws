@@ -1,0 +1,5 @@
+<launch>
+  <!-- <master auto="start"/> -->
+  <param name="/use_sim_time" value="false"/>
+  <include file="$(find nav_car)/move_base_config/move_base_soccer.xml"/>
+</launch>
