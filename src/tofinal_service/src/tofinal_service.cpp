@@ -128,7 +128,7 @@ public:
         if(client00.call(srv))
         {
           ROS_INFO("success");
-          ROS_INFO("the response is %ld", (long int)srv.response.mark);
+        //  ROS_INFO("the response is %ld", (long int)srv.response.mark);
         }
         else
         {
@@ -138,6 +138,7 @@ public:
         }
         sleep(1);
         geometry_msgs::Pose new_point;
+        //new_point: x y is the same as mediate point; theta is the same as axis_point[1].
         new_point.position.x = mediate_x_+0.0001;  //todo
         new_point.position.y = mediate_y_+0.0001;
         new_point.position.z = 0.0;
@@ -149,8 +150,6 @@ public:
         if(client00.call(srv))
         {
           ROS_INFO("success");
-          ROS_INFO("the response is %ld", (l    res.mark = 0;
-      return true;ong int)srv.response.mark);
         }
         else
         {
@@ -164,7 +163,7 @@ public:
         if(client00.call(srv))
         {
           ROS_INFO("success");
-          ROS_INFO("the response is %ld", (long int)srv.response.mark);
+        //  ROS_INFO("the response is %ld", (long int)srv.response.mark);
         }
         else
         {
@@ -178,7 +177,7 @@ public:
         if(client00.call(srv))
         {
           ROS_INFO("success");
-          ROS_INFO("the response is %ld", (long int)srv.response.mark);
+        //  ROS_INFO("the response is %ld", (long int)srv.response.mark);
         }
         else
         {
@@ -192,7 +191,7 @@ public:
         if(client00.call(srv))
         {
          ROS_INFO("success");
-          ROS_INFO("the response is %ld", (long int)srv.response.mark);
+        //  ROS_INFO("the response is %ld", (long int)srv.response.mark);
         }
         else
         {

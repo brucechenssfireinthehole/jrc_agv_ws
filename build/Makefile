@@ -1375,160 +1375,17 @@ reboot_test/fast:
 .PHONY : reboot_test/fast
 
 #=============================================================================
-# Target rules for targets named velocity_smooth_generate_messages_lisp
+# Target rules for targets named velocity_smooth_client
 
 # Build rule for target.
-velocity_smooth_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 velocity_smooth_generate_messages_lisp
-.PHONY : velocity_smooth_generate_messages_lisp
+velocity_smooth_client: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 velocity_smooth_client
+.PHONY : velocity_smooth_client
 
 # fast build rule for target.
-velocity_smooth_generate_messages_lisp/fast:
-	$(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_lisp.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_lisp.dir/build
-.PHONY : velocity_smooth_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named velocity_smooth_geneus
-
-# Build rule for target.
-velocity_smooth_geneus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 velocity_smooth_geneus
-.PHONY : velocity_smooth_geneus
-
-# fast build rule for target.
-velocity_smooth_geneus/fast:
-	$(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_geneus.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_geneus.dir/build
-.PHONY : velocity_smooth_geneus/fast
-
-#=============================================================================
-# Target rules for targets named velocity_smooth_generate_messages_py
-
-# Build rule for target.
-velocity_smooth_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 velocity_smooth_generate_messages_py
-.PHONY : velocity_smooth_generate_messages_py
-
-# fast build rule for target.
-velocity_smooth_generate_messages_py/fast:
-	$(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_py.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_py.dir/build
-.PHONY : velocity_smooth_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named velocity_smooth_generate_messages_eus
-
-# Build rule for target.
-velocity_smooth_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 velocity_smooth_generate_messages_eus
-.PHONY : velocity_smooth_generate_messages_eus
-
-# fast build rule for target.
-velocity_smooth_generate_messages_eus/fast:
-	$(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_eus.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_eus.dir/build
-.PHONY : velocity_smooth_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named velocity_smooth_gencpp
-
-# Build rule for target.
-velocity_smooth_gencpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 velocity_smooth_gencpp
-.PHONY : velocity_smooth_gencpp
-
-# fast build rule for target.
-velocity_smooth_gencpp/fast:
-	$(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_gencpp.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_gencpp.dir/build
-.PHONY : velocity_smooth_gencpp/fast
-
-#=============================================================================
-# Target rules for targets named velocity_smooth_generate_messages_nodejs
-
-# Build rule for target.
-velocity_smooth_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 velocity_smooth_generate_messages_nodejs
-.PHONY : velocity_smooth_generate_messages_nodejs
-
-# fast build rule for target.
-velocity_smooth_generate_messages_nodejs/fast:
-	$(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_nodejs.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_nodejs.dir/build
-.PHONY : velocity_smooth_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named _velocity_smooth_generate_messages_check_deps_smooth_srv_multi
-
-# Build rule for target.
-_velocity_smooth_generate_messages_check_deps_smooth_srv_multi: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _velocity_smooth_generate_messages_check_deps_smooth_srv_multi
-.PHONY : _velocity_smooth_generate_messages_check_deps_smooth_srv_multi
-
-# fast build rule for target.
-_velocity_smooth_generate_messages_check_deps_smooth_srv_multi/fast:
-	$(MAKE) -f velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv_multi.dir/build.make velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv_multi.dir/build
-.PHONY : _velocity_smooth_generate_messages_check_deps_smooth_srv_multi/fast
-
-#=============================================================================
-# Target rules for targets named _velocity_smooth_generate_messages_check_deps_smooth_srv
-
-# Build rule for target.
-_velocity_smooth_generate_messages_check_deps_smooth_srv: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _velocity_smooth_generate_messages_check_deps_smooth_srv
-.PHONY : _velocity_smooth_generate_messages_check_deps_smooth_srv
-
-# fast build rule for target.
-_velocity_smooth_generate_messages_check_deps_smooth_srv/fast:
-	$(MAKE) -f velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv.dir/build.make velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv.dir/build
-.PHONY : _velocity_smooth_generate_messages_check_deps_smooth_srv/fast
-
-#=============================================================================
-# Target rules for targets named velocity_smooth_genlisp
-
-# Build rule for target.
-velocity_smooth_genlisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 velocity_smooth_genlisp
-.PHONY : velocity_smooth_genlisp
-
-# fast build rule for target.
-velocity_smooth_genlisp/fast:
-	$(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_genlisp.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_genlisp.dir/build
-.PHONY : velocity_smooth_genlisp/fast
-
-#=============================================================================
-# Target rules for targets named velocity_smooth_generate_messages_cpp
-
-# Build rule for target.
-velocity_smooth_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 velocity_smooth_generate_messages_cpp
-.PHONY : velocity_smooth_generate_messages_cpp
-
-# fast build rule for target.
-velocity_smooth_generate_messages_cpp/fast:
-	$(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_cpp.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_cpp.dir/build
-.PHONY : velocity_smooth_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named velocity_smooth_gennodejs
-
-# Build rule for target.
-velocity_smooth_gennodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 velocity_smooth_gennodejs
-.PHONY : velocity_smooth_gennodejs
-
-# fast build rule for target.
-velocity_smooth_gennodejs/fast:
-	$(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_gennodejs.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_gennodejs.dir/build
-.PHONY : velocity_smooth_gennodejs/fast
-
-#=============================================================================
-# Target rules for targets named velocity_smooth_genpy
-
-# Build rule for target.
-velocity_smooth_genpy: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 velocity_smooth_genpy
-.PHONY : velocity_smooth_genpy
-
-# fast build rule for target.
-velocity_smooth_genpy/fast:
-	$(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_genpy.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_genpy.dir/build
-.PHONY : velocity_smooth_genpy/fast
+velocity_smooth_client/fast:
+	$(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_client.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_client.dir/build
+.PHONY : velocity_smooth_client/fast
 
 #=============================================================================
 # Target rules for targets named velocity_smooth
@@ -1544,30 +1401,95 @@ velocity_smooth/fast:
 .PHONY : velocity_smooth/fast
 
 #=============================================================================
-# Target rules for targets named velocity_smooth_client
+# Target rules for targets named velocity_smooth_genpy
 
 # Build rule for target.
-velocity_smooth_client: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 velocity_smooth_client
-.PHONY : velocity_smooth_client
+velocity_smooth_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 velocity_smooth_genpy
+.PHONY : velocity_smooth_genpy
 
 # fast build rule for target.
-velocity_smooth_client/fast:
-	$(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_client.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_client.dir/build
-.PHONY : velocity_smooth_client/fast
+velocity_smooth_genpy/fast:
+	$(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_genpy.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_genpy.dir/build
+.PHONY : velocity_smooth_genpy/fast
 
 #=============================================================================
-# Target rules for targets named velocity_smooth_initial
+# Target rules for targets named velocity_smooth_gennodejs
 
 # Build rule for target.
-velocity_smooth_initial: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 velocity_smooth_initial
-.PHONY : velocity_smooth_initial
+velocity_smooth_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 velocity_smooth_gennodejs
+.PHONY : velocity_smooth_gennodejs
 
 # fast build rule for target.
-velocity_smooth_initial/fast:
-	$(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_initial.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_initial.dir/build
-.PHONY : velocity_smooth_initial/fast
+velocity_smooth_gennodejs/fast:
+	$(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_gennodejs.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_gennodejs.dir/build
+.PHONY : velocity_smooth_gennodejs/fast
+
+#=============================================================================
+# Target rules for targets named velocity_smooth_generate_messages_cpp
+
+# Build rule for target.
+velocity_smooth_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 velocity_smooth_generate_messages_cpp
+.PHONY : velocity_smooth_generate_messages_cpp
+
+# fast build rule for target.
+velocity_smooth_generate_messages_cpp/fast:
+	$(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_cpp.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_cpp.dir/build
+.PHONY : velocity_smooth_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named velocity_smooth_genlisp
+
+# Build rule for target.
+velocity_smooth_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 velocity_smooth_genlisp
+.PHONY : velocity_smooth_genlisp
+
+# fast build rule for target.
+velocity_smooth_genlisp/fast:
+	$(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_genlisp.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_genlisp.dir/build
+.PHONY : velocity_smooth_genlisp/fast
+
+#=============================================================================
+# Target rules for targets named _velocity_smooth_generate_messages_check_deps_smooth_srv
+
+# Build rule for target.
+_velocity_smooth_generate_messages_check_deps_smooth_srv: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _velocity_smooth_generate_messages_check_deps_smooth_srv
+.PHONY : _velocity_smooth_generate_messages_check_deps_smooth_srv
+
+# fast build rule for target.
+_velocity_smooth_generate_messages_check_deps_smooth_srv/fast:
+	$(MAKE) -f velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv.dir/build.make velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv.dir/build
+.PHONY : _velocity_smooth_generate_messages_check_deps_smooth_srv/fast
+
+#=============================================================================
+# Target rules for targets named _velocity_smooth_generate_messages_check_deps_smooth_srv_multi
+
+# Build rule for target.
+_velocity_smooth_generate_messages_check_deps_smooth_srv_multi: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _velocity_smooth_generate_messages_check_deps_smooth_srv_multi
+.PHONY : _velocity_smooth_generate_messages_check_deps_smooth_srv_multi
+
+# fast build rule for target.
+_velocity_smooth_generate_messages_check_deps_smooth_srv_multi/fast:
+	$(MAKE) -f velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv_multi.dir/build.make velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv_multi.dir/build
+.PHONY : _velocity_smooth_generate_messages_check_deps_smooth_srv_multi/fast
+
+#=============================================================================
+# Target rules for targets named velocity_smooth_generate_messages_nodejs
+
+# Build rule for target.
+velocity_smooth_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 velocity_smooth_generate_messages_nodejs
+.PHONY : velocity_smooth_generate_messages_nodejs
+
+# fast build rule for target.
+velocity_smooth_generate_messages_nodejs/fast:
+	$(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_nodejs.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_nodejs.dir/build
+.PHONY : velocity_smooth_generate_messages_nodejs/fast
 
 #=============================================================================
 # Target rules for targets named velocity_smooth_generate_messages
@@ -1581,6 +1503,71 @@ velocity_smooth_generate_messages: cmake_check_build_system
 velocity_smooth_generate_messages/fast:
 	$(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_generate_messages.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_generate_messages.dir/build
 .PHONY : velocity_smooth_generate_messages/fast
+
+#=============================================================================
+# Target rules for targets named velocity_smooth_gencpp
+
+# Build rule for target.
+velocity_smooth_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 velocity_smooth_gencpp
+.PHONY : velocity_smooth_gencpp
+
+# fast build rule for target.
+velocity_smooth_gencpp/fast:
+	$(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_gencpp.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_gencpp.dir/build
+.PHONY : velocity_smooth_gencpp/fast
+
+#=============================================================================
+# Target rules for targets named velocity_smooth_generate_messages_eus
+
+# Build rule for target.
+velocity_smooth_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 velocity_smooth_generate_messages_eus
+.PHONY : velocity_smooth_generate_messages_eus
+
+# fast build rule for target.
+velocity_smooth_generate_messages_eus/fast:
+	$(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_eus.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_eus.dir/build
+.PHONY : velocity_smooth_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named velocity_smooth_generate_messages_py
+
+# Build rule for target.
+velocity_smooth_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 velocity_smooth_generate_messages_py
+.PHONY : velocity_smooth_generate_messages_py
+
+# fast build rule for target.
+velocity_smooth_generate_messages_py/fast:
+	$(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_py.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_py.dir/build
+.PHONY : velocity_smooth_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named velocity_smooth_geneus
+
+# Build rule for target.
+velocity_smooth_geneus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 velocity_smooth_geneus
+.PHONY : velocity_smooth_geneus
+
+# fast build rule for target.
+velocity_smooth_geneus/fast:
+	$(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_geneus.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_geneus.dir/build
+.PHONY : velocity_smooth_geneus/fast
+
+#=============================================================================
+# Target rules for targets named velocity_smooth_generate_messages_lisp
+
+# Build rule for target.
+velocity_smooth_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 velocity_smooth_generate_messages_lisp
+.PHONY : velocity_smooth_generate_messages_lisp
+
+# fast build rule for target.
+velocity_smooth_generate_messages_lisp/fast:
+	$(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_lisp.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_lisp.dir/build
+.PHONY : velocity_smooth_generate_messages_lisp/fast
 
 #=============================================================================
 # Target rules for targets named agv_tcp_velocity_node
@@ -5575,22 +5562,21 @@ help:
 	@echo "... get_multiecho_intensity"
 	@echo "... open_urg_sensor"
 	@echo "... reboot_test"
-	@echo "... velocity_smooth_generate_messages_lisp"
-	@echo "... velocity_smooth_geneus"
-	@echo "... velocity_smooth_generate_messages_py"
-	@echo "... velocity_smooth_generate_messages_eus"
-	@echo "... velocity_smooth_gencpp"
-	@echo "... velocity_smooth_generate_messages_nodejs"
-	@echo "... _velocity_smooth_generate_messages_check_deps_smooth_srv_multi"
-	@echo "... _velocity_smooth_generate_messages_check_deps_smooth_srv"
-	@echo "... velocity_smooth_genlisp"
-	@echo "... velocity_smooth_generate_messages_cpp"
-	@echo "... velocity_smooth_gennodejs"
-	@echo "... velocity_smooth_genpy"
-	@echo "... velocity_smooth"
 	@echo "... velocity_smooth_client"
-	@echo "... velocity_smooth_initial"
+	@echo "... velocity_smooth"
+	@echo "... velocity_smooth_genpy"
+	@echo "... velocity_smooth_gennodejs"
+	@echo "... velocity_smooth_generate_messages_cpp"
+	@echo "... velocity_smooth_genlisp"
+	@echo "... _velocity_smooth_generate_messages_check_deps_smooth_srv"
+	@echo "... _velocity_smooth_generate_messages_check_deps_smooth_srv_multi"
+	@echo "... velocity_smooth_generate_messages_nodejs"
 	@echo "... velocity_smooth_generate_messages"
+	@echo "... velocity_smooth_gencpp"
+	@echo "... velocity_smooth_generate_messages_eus"
+	@echo "... velocity_smooth_generate_messages_py"
+	@echo "... velocity_smooth_geneus"
+	@echo "... velocity_smooth_generate_messages_lisp"
 	@echo "... agv_tcp_velocity_node"
 	@echo "... run_tests_map_server"
 	@echo "... nav_msgs_generate_messages_nodejs"

@@ -56,59 +56,17 @@ CMAKE_BINARY_DIR = /home/brucechen/nav_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target test
 test:
@@ -121,17 +79,59 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,184 +166,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_lisp.dir/rule:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f CMakeFiles/Makefile2 velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_lisp.dir/rule
-.PHONY : velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_lisp.dir/rule
+velocity_smooth/CMakeFiles/velocity_smooth_client.dir/rule:
+	cd /home/brucechen/nav_ws/build && $(MAKE) -f CMakeFiles/Makefile2 velocity_smooth/CMakeFiles/velocity_smooth_client.dir/rule
+.PHONY : velocity_smooth/CMakeFiles/velocity_smooth_client.dir/rule
 
 # Convenience name for target.
-velocity_smooth_generate_messages_lisp: velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_lisp.dir/rule
+velocity_smooth_client: velocity_smooth/CMakeFiles/velocity_smooth_client.dir/rule
 
-.PHONY : velocity_smooth_generate_messages_lisp
+.PHONY : velocity_smooth_client
 
 # fast build rule for target.
-velocity_smooth_generate_messages_lisp/fast:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_lisp.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_lisp.dir/build
-.PHONY : velocity_smooth_generate_messages_lisp/fast
-
-# Convenience name for target.
-velocity_smooth/CMakeFiles/velocity_smooth_geneus.dir/rule:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f CMakeFiles/Makefile2 velocity_smooth/CMakeFiles/velocity_smooth_geneus.dir/rule
-.PHONY : velocity_smooth/CMakeFiles/velocity_smooth_geneus.dir/rule
-
-# Convenience name for target.
-velocity_smooth_geneus: velocity_smooth/CMakeFiles/velocity_smooth_geneus.dir/rule
-
-.PHONY : velocity_smooth_geneus
-
-# fast build rule for target.
-velocity_smooth_geneus/fast:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_geneus.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_geneus.dir/build
-.PHONY : velocity_smooth_geneus/fast
-
-# Convenience name for target.
-velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_py.dir/rule:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f CMakeFiles/Makefile2 velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_py.dir/rule
-.PHONY : velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_py.dir/rule
-
-# Convenience name for target.
-velocity_smooth_generate_messages_py: velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_py.dir/rule
-
-.PHONY : velocity_smooth_generate_messages_py
-
-# fast build rule for target.
-velocity_smooth_generate_messages_py/fast:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_py.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_py.dir/build
-.PHONY : velocity_smooth_generate_messages_py/fast
-
-# Convenience name for target.
-velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_eus.dir/rule:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f CMakeFiles/Makefile2 velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_eus.dir/rule
-.PHONY : velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-velocity_smooth_generate_messages_eus: velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_eus.dir/rule
-
-.PHONY : velocity_smooth_generate_messages_eus
-
-# fast build rule for target.
-velocity_smooth_generate_messages_eus/fast:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_eus.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_eus.dir/build
-.PHONY : velocity_smooth_generate_messages_eus/fast
-
-# Convenience name for target.
-velocity_smooth/CMakeFiles/velocity_smooth_gencpp.dir/rule:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f CMakeFiles/Makefile2 velocity_smooth/CMakeFiles/velocity_smooth_gencpp.dir/rule
-.PHONY : velocity_smooth/CMakeFiles/velocity_smooth_gencpp.dir/rule
-
-# Convenience name for target.
-velocity_smooth_gencpp: velocity_smooth/CMakeFiles/velocity_smooth_gencpp.dir/rule
-
-.PHONY : velocity_smooth_gencpp
-
-# fast build rule for target.
-velocity_smooth_gencpp/fast:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_gencpp.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_gencpp.dir/build
-.PHONY : velocity_smooth_gencpp/fast
-
-# Convenience name for target.
-velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_nodejs.dir/rule:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f CMakeFiles/Makefile2 velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_nodejs.dir/rule
-.PHONY : velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-velocity_smooth_generate_messages_nodejs: velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_nodejs.dir/rule
-
-.PHONY : velocity_smooth_generate_messages_nodejs
-
-# fast build rule for target.
-velocity_smooth_generate_messages_nodejs/fast:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_nodejs.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_nodejs.dir/build
-.PHONY : velocity_smooth_generate_messages_nodejs/fast
-
-# Convenience name for target.
-velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv_multi.dir/rule:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f CMakeFiles/Makefile2 velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv_multi.dir/rule
-.PHONY : velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv_multi.dir/rule
-
-# Convenience name for target.
-_velocity_smooth_generate_messages_check_deps_smooth_srv_multi: velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv_multi.dir/rule
-
-.PHONY : _velocity_smooth_generate_messages_check_deps_smooth_srv_multi
-
-# fast build rule for target.
-_velocity_smooth_generate_messages_check_deps_smooth_srv_multi/fast:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv_multi.dir/build.make velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv_multi.dir/build
-.PHONY : _velocity_smooth_generate_messages_check_deps_smooth_srv_multi/fast
-
-# Convenience name for target.
-velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv.dir/rule:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f CMakeFiles/Makefile2 velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv.dir/rule
-.PHONY : velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv.dir/rule
-
-# Convenience name for target.
-_velocity_smooth_generate_messages_check_deps_smooth_srv: velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv.dir/rule
-
-.PHONY : _velocity_smooth_generate_messages_check_deps_smooth_srv
-
-# fast build rule for target.
-_velocity_smooth_generate_messages_check_deps_smooth_srv/fast:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv.dir/build.make velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv.dir/build
-.PHONY : _velocity_smooth_generate_messages_check_deps_smooth_srv/fast
-
-# Convenience name for target.
-velocity_smooth/CMakeFiles/velocity_smooth_genlisp.dir/rule:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f CMakeFiles/Makefile2 velocity_smooth/CMakeFiles/velocity_smooth_genlisp.dir/rule
-.PHONY : velocity_smooth/CMakeFiles/velocity_smooth_genlisp.dir/rule
-
-# Convenience name for target.
-velocity_smooth_genlisp: velocity_smooth/CMakeFiles/velocity_smooth_genlisp.dir/rule
-
-.PHONY : velocity_smooth_genlisp
-
-# fast build rule for target.
-velocity_smooth_genlisp/fast:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_genlisp.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_genlisp.dir/build
-.PHONY : velocity_smooth_genlisp/fast
-
-# Convenience name for target.
-velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_cpp.dir/rule:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f CMakeFiles/Makefile2 velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_cpp.dir/rule
-.PHONY : velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-velocity_smooth_generate_messages_cpp: velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_cpp.dir/rule
-
-.PHONY : velocity_smooth_generate_messages_cpp
-
-# fast build rule for target.
-velocity_smooth_generate_messages_cpp/fast:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_cpp.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_cpp.dir/build
-.PHONY : velocity_smooth_generate_messages_cpp/fast
-
-# Convenience name for target.
-velocity_smooth/CMakeFiles/velocity_smooth_gennodejs.dir/rule:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f CMakeFiles/Makefile2 velocity_smooth/CMakeFiles/velocity_smooth_gennodejs.dir/rule
-.PHONY : velocity_smooth/CMakeFiles/velocity_smooth_gennodejs.dir/rule
-
-# Convenience name for target.
-velocity_smooth_gennodejs: velocity_smooth/CMakeFiles/velocity_smooth_gennodejs.dir/rule
-
-.PHONY : velocity_smooth_gennodejs
-
-# fast build rule for target.
-velocity_smooth_gennodejs/fast:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_gennodejs.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_gennodejs.dir/build
-.PHONY : velocity_smooth_gennodejs/fast
-
-# Convenience name for target.
-velocity_smooth/CMakeFiles/velocity_smooth_genpy.dir/rule:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f CMakeFiles/Makefile2 velocity_smooth/CMakeFiles/velocity_smooth_genpy.dir/rule
-.PHONY : velocity_smooth/CMakeFiles/velocity_smooth_genpy.dir/rule
-
-# Convenience name for target.
-velocity_smooth_genpy: velocity_smooth/CMakeFiles/velocity_smooth_genpy.dir/rule
-
-.PHONY : velocity_smooth_genpy
-
-# fast build rule for target.
-velocity_smooth_genpy/fast:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_genpy.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_genpy.dir/build
-.PHONY : velocity_smooth_genpy/fast
+velocity_smooth_client/fast:
+	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_client.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_client.dir/build
+.PHONY : velocity_smooth_client/fast
 
 # Convenience name for target.
 velocity_smooth/CMakeFiles/velocity_smooth.dir/rule:
@@ -361,34 +196,109 @@ velocity_smooth/fast:
 .PHONY : velocity_smooth/fast
 
 # Convenience name for target.
-velocity_smooth/CMakeFiles/velocity_smooth_client.dir/rule:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f CMakeFiles/Makefile2 velocity_smooth/CMakeFiles/velocity_smooth_client.dir/rule
-.PHONY : velocity_smooth/CMakeFiles/velocity_smooth_client.dir/rule
+velocity_smooth/CMakeFiles/velocity_smooth_genpy.dir/rule:
+	cd /home/brucechen/nav_ws/build && $(MAKE) -f CMakeFiles/Makefile2 velocity_smooth/CMakeFiles/velocity_smooth_genpy.dir/rule
+.PHONY : velocity_smooth/CMakeFiles/velocity_smooth_genpy.dir/rule
 
 # Convenience name for target.
-velocity_smooth_client: velocity_smooth/CMakeFiles/velocity_smooth_client.dir/rule
+velocity_smooth_genpy: velocity_smooth/CMakeFiles/velocity_smooth_genpy.dir/rule
 
-.PHONY : velocity_smooth_client
+.PHONY : velocity_smooth_genpy
 
 # fast build rule for target.
-velocity_smooth_client/fast:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_client.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_client.dir/build
-.PHONY : velocity_smooth_client/fast
+velocity_smooth_genpy/fast:
+	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_genpy.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_genpy.dir/build
+.PHONY : velocity_smooth_genpy/fast
 
 # Convenience name for target.
-velocity_smooth/CMakeFiles/velocity_smooth_initial.dir/rule:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f CMakeFiles/Makefile2 velocity_smooth/CMakeFiles/velocity_smooth_initial.dir/rule
-.PHONY : velocity_smooth/CMakeFiles/velocity_smooth_initial.dir/rule
+velocity_smooth/CMakeFiles/velocity_smooth_gennodejs.dir/rule:
+	cd /home/brucechen/nav_ws/build && $(MAKE) -f CMakeFiles/Makefile2 velocity_smooth/CMakeFiles/velocity_smooth_gennodejs.dir/rule
+.PHONY : velocity_smooth/CMakeFiles/velocity_smooth_gennodejs.dir/rule
 
 # Convenience name for target.
-velocity_smooth_initial: velocity_smooth/CMakeFiles/velocity_smooth_initial.dir/rule
+velocity_smooth_gennodejs: velocity_smooth/CMakeFiles/velocity_smooth_gennodejs.dir/rule
 
-.PHONY : velocity_smooth_initial
+.PHONY : velocity_smooth_gennodejs
 
 # fast build rule for target.
-velocity_smooth_initial/fast:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_initial.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_initial.dir/build
-.PHONY : velocity_smooth_initial/fast
+velocity_smooth_gennodejs/fast:
+	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_gennodejs.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_gennodejs.dir/build
+.PHONY : velocity_smooth_gennodejs/fast
+
+# Convenience name for target.
+velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_cpp.dir/rule:
+	cd /home/brucechen/nav_ws/build && $(MAKE) -f CMakeFiles/Makefile2 velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_cpp.dir/rule
+.PHONY : velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+velocity_smooth_generate_messages_cpp: velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_cpp.dir/rule
+
+.PHONY : velocity_smooth_generate_messages_cpp
+
+# fast build rule for target.
+velocity_smooth_generate_messages_cpp/fast:
+	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_cpp.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_cpp.dir/build
+.PHONY : velocity_smooth_generate_messages_cpp/fast
+
+# Convenience name for target.
+velocity_smooth/CMakeFiles/velocity_smooth_genlisp.dir/rule:
+	cd /home/brucechen/nav_ws/build && $(MAKE) -f CMakeFiles/Makefile2 velocity_smooth/CMakeFiles/velocity_smooth_genlisp.dir/rule
+.PHONY : velocity_smooth/CMakeFiles/velocity_smooth_genlisp.dir/rule
+
+# Convenience name for target.
+velocity_smooth_genlisp: velocity_smooth/CMakeFiles/velocity_smooth_genlisp.dir/rule
+
+.PHONY : velocity_smooth_genlisp
+
+# fast build rule for target.
+velocity_smooth_genlisp/fast:
+	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_genlisp.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_genlisp.dir/build
+.PHONY : velocity_smooth_genlisp/fast
+
+# Convenience name for target.
+velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv.dir/rule:
+	cd /home/brucechen/nav_ws/build && $(MAKE) -f CMakeFiles/Makefile2 velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv.dir/rule
+.PHONY : velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv.dir/rule
+
+# Convenience name for target.
+_velocity_smooth_generate_messages_check_deps_smooth_srv: velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv.dir/rule
+
+.PHONY : _velocity_smooth_generate_messages_check_deps_smooth_srv
+
+# fast build rule for target.
+_velocity_smooth_generate_messages_check_deps_smooth_srv/fast:
+	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv.dir/build.make velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv.dir/build
+.PHONY : _velocity_smooth_generate_messages_check_deps_smooth_srv/fast
+
+# Convenience name for target.
+velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv_multi.dir/rule:
+	cd /home/brucechen/nav_ws/build && $(MAKE) -f CMakeFiles/Makefile2 velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv_multi.dir/rule
+.PHONY : velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv_multi.dir/rule
+
+# Convenience name for target.
+_velocity_smooth_generate_messages_check_deps_smooth_srv_multi: velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv_multi.dir/rule
+
+.PHONY : _velocity_smooth_generate_messages_check_deps_smooth_srv_multi
+
+# fast build rule for target.
+_velocity_smooth_generate_messages_check_deps_smooth_srv_multi/fast:
+	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv_multi.dir/build.make velocity_smooth/CMakeFiles/_velocity_smooth_generate_messages_check_deps_smooth_srv_multi.dir/build
+.PHONY : _velocity_smooth_generate_messages_check_deps_smooth_srv_multi/fast
+
+# Convenience name for target.
+velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_nodejs.dir/rule:
+	cd /home/brucechen/nav_ws/build && $(MAKE) -f CMakeFiles/Makefile2 velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_nodejs.dir/rule
+.PHONY : velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+velocity_smooth_generate_messages_nodejs: velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_nodejs.dir/rule
+
+.PHONY : velocity_smooth_generate_messages_nodejs
+
+# fast build rule for target.
+velocity_smooth_generate_messages_nodejs/fast:
+	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_nodejs.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_nodejs.dir/build
+.PHONY : velocity_smooth_generate_messages_nodejs/fast
 
 # Convenience name for target.
 velocity_smooth/CMakeFiles/velocity_smooth_generate_messages.dir/rule:
@@ -404,6 +314,81 @@ velocity_smooth_generate_messages: velocity_smooth/CMakeFiles/velocity_smooth_ge
 velocity_smooth_generate_messages/fast:
 	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_generate_messages.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_generate_messages.dir/build
 .PHONY : velocity_smooth_generate_messages/fast
+
+# Convenience name for target.
+velocity_smooth/CMakeFiles/velocity_smooth_gencpp.dir/rule:
+	cd /home/brucechen/nav_ws/build && $(MAKE) -f CMakeFiles/Makefile2 velocity_smooth/CMakeFiles/velocity_smooth_gencpp.dir/rule
+.PHONY : velocity_smooth/CMakeFiles/velocity_smooth_gencpp.dir/rule
+
+# Convenience name for target.
+velocity_smooth_gencpp: velocity_smooth/CMakeFiles/velocity_smooth_gencpp.dir/rule
+
+.PHONY : velocity_smooth_gencpp
+
+# fast build rule for target.
+velocity_smooth_gencpp/fast:
+	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_gencpp.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_gencpp.dir/build
+.PHONY : velocity_smooth_gencpp/fast
+
+# Convenience name for target.
+velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_eus.dir/rule:
+	cd /home/brucechen/nav_ws/build && $(MAKE) -f CMakeFiles/Makefile2 velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_eus.dir/rule
+.PHONY : velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+velocity_smooth_generate_messages_eus: velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_eus.dir/rule
+
+.PHONY : velocity_smooth_generate_messages_eus
+
+# fast build rule for target.
+velocity_smooth_generate_messages_eus/fast:
+	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_eus.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_eus.dir/build
+.PHONY : velocity_smooth_generate_messages_eus/fast
+
+# Convenience name for target.
+velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_py.dir/rule:
+	cd /home/brucechen/nav_ws/build && $(MAKE) -f CMakeFiles/Makefile2 velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_py.dir/rule
+.PHONY : velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_py.dir/rule
+
+# Convenience name for target.
+velocity_smooth_generate_messages_py: velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_py.dir/rule
+
+.PHONY : velocity_smooth_generate_messages_py
+
+# fast build rule for target.
+velocity_smooth_generate_messages_py/fast:
+	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_py.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_py.dir/build
+.PHONY : velocity_smooth_generate_messages_py/fast
+
+# Convenience name for target.
+velocity_smooth/CMakeFiles/velocity_smooth_geneus.dir/rule:
+	cd /home/brucechen/nav_ws/build && $(MAKE) -f CMakeFiles/Makefile2 velocity_smooth/CMakeFiles/velocity_smooth_geneus.dir/rule
+.PHONY : velocity_smooth/CMakeFiles/velocity_smooth_geneus.dir/rule
+
+# Convenience name for target.
+velocity_smooth_geneus: velocity_smooth/CMakeFiles/velocity_smooth_geneus.dir/rule
+
+.PHONY : velocity_smooth_geneus
+
+# fast build rule for target.
+velocity_smooth_geneus/fast:
+	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_geneus.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_geneus.dir/build
+.PHONY : velocity_smooth_geneus/fast
+
+# Convenience name for target.
+velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_lisp.dir/rule:
+	cd /home/brucechen/nav_ws/build && $(MAKE) -f CMakeFiles/Makefile2 velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_lisp.dir/rule
+.PHONY : velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+velocity_smooth_generate_messages_lisp: velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_lisp.dir/rule
+
+.PHONY : velocity_smooth_generate_messages_lisp
+
+# fast build rule for target.
+velocity_smooth_generate_messages_lisp/fast:
+	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_lisp.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_generate_messages_lisp.dir/build
+.PHONY : velocity_smooth_generate_messages_lisp/fast
 
 src/velocity_smooth.o: src/velocity_smooth.cpp.o
 
@@ -459,71 +444,40 @@ src/velocity_smooth_client.cpp.s:
 	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_client.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_client.dir/src/velocity_smooth_client.cpp.s
 .PHONY : src/velocity_smooth_client.cpp.s
 
-src/velocity_smooth_initial.o: src/velocity_smooth_initial.cpp.o
-
-.PHONY : src/velocity_smooth_initial.o
-
-# target to build an object file
-src/velocity_smooth_initial.cpp.o:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_initial.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_initial.dir/src/velocity_smooth_initial.cpp.o
-.PHONY : src/velocity_smooth_initial.cpp.o
-
-src/velocity_smooth_initial.i: src/velocity_smooth_initial.cpp.i
-
-.PHONY : src/velocity_smooth_initial.i
-
-# target to preprocess a source file
-src/velocity_smooth_initial.cpp.i:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_initial.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_initial.dir/src/velocity_smooth_initial.cpp.i
-.PHONY : src/velocity_smooth_initial.cpp.i
-
-src/velocity_smooth_initial.s: src/velocity_smooth_initial.cpp.s
-
-.PHONY : src/velocity_smooth_initial.s
-
-# target to generate assembly for a file
-src/velocity_smooth_initial.cpp.s:
-	cd /home/brucechen/nav_ws/build && $(MAKE) -f velocity_smooth/CMakeFiles/velocity_smooth_initial.dir/build.make velocity_smooth/CMakeFiles/velocity_smooth_initial.dir/src/velocity_smooth_initial.cpp.s
-.PHONY : src/velocity_smooth_initial.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... list_install_components"
-	@echo "... velocity_smooth_generate_messages_lisp"
-	@echo "... velocity_smooth_geneus"
-	@echo "... velocity_smooth_generate_messages_py"
-	@echo "... install/local"
-	@echo "... velocity_smooth_generate_messages_eus"
-	@echo "... install/strip"
-	@echo "... velocity_smooth_gencpp"
-	@echo "... velocity_smooth_generate_messages_nodejs"
-	@echo "... _velocity_smooth_generate_messages_check_deps_smooth_srv_multi"
-	@echo "... _velocity_smooth_generate_messages_check_deps_smooth_srv"
-	@echo "... velocity_smooth_genlisp"
-	@echo "... velocity_smooth_generate_messages_cpp"
-	@echo "... velocity_smooth_gennodejs"
-	@echo "... rebuild_cache"
-	@echo "... velocity_smooth_genpy"
-	@echo "... velocity_smooth"
-	@echo "... velocity_smooth_client"
-	@echo "... edit_cache"
-	@echo "... velocity_smooth_initial"
-	@echo "... test"
-	@echo "... velocity_smooth_generate_messages"
 	@echo "... install"
+	@echo "... test"
+	@echo "... edit_cache"
+	@echo "... velocity_smooth_client"
+	@echo "... velocity_smooth"
+	@echo "... velocity_smooth_genpy"
+	@echo "... rebuild_cache"
+	@echo "... velocity_smooth_gennodejs"
+	@echo "... velocity_smooth_generate_messages_cpp"
+	@echo "... velocity_smooth_genlisp"
+	@echo "... _velocity_smooth_generate_messages_check_deps_smooth_srv"
+	@echo "... _velocity_smooth_generate_messages_check_deps_smooth_srv_multi"
+	@echo "... velocity_smooth_generate_messages_nodejs"
+	@echo "... velocity_smooth_generate_messages"
+	@echo "... velocity_smooth_gencpp"
+	@echo "... list_install_components"
+	@echo "... install/strip"
+	@echo "... velocity_smooth_generate_messages_eus"
+	@echo "... install/local"
+	@echo "... velocity_smooth_generate_messages_py"
+	@echo "... velocity_smooth_geneus"
+	@echo "... velocity_smooth_generate_messages_lisp"
 	@echo "... src/velocity_smooth.o"
 	@echo "... src/velocity_smooth.i"
 	@echo "... src/velocity_smooth.s"
 	@echo "... src/velocity_smooth_client.o"
 	@echo "... src/velocity_smooth_client.i"
 	@echo "... src/velocity_smooth_client.s"
-	@echo "... src/velocity_smooth_initial.o"
-	@echo "... src/velocity_smooth_initial.i"
-	@echo "... src/velocity_smooth_initial.s"
 .PHONY : help
 
 
