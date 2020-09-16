@@ -1,8 +1,0 @@
-prefix=/home/brucechen/nav_ws/install
-
-Name: tofinal_service
-Description: Description of tofinal_service
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/brucechen/nav_ws/install/lib 
-Requires: message_runtime

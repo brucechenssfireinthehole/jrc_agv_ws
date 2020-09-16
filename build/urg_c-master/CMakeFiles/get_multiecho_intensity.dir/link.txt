@@ -1,1 +1,0 @@
-/usr/bin/cc     CMakeFiles/get_multiecho_intensity.dir/current/samples/get_multiecho_intensity.c.o  -o /home/brucechen/nav_ws/devel/lib/urg_c/get_multiecho_intensity -rdynamic /home/brucechen/nav_ws/devel/lib/libopen_urg_sensor.so /home/brucechen/nav_ws/devel/lib/libliburg_c.so -lrt -lm -Wl,-rpath,/home/brucechen/nav_ws/devel/lib: 

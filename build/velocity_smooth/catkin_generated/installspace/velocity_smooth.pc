@@ -1,8 +1,0 @@
-prefix=/home/brucechen/nav_ws/install
-
-Name: velocity_smooth
-Description: Description of velocity_smooth
-Version: 0.0.0
-Cflags: -I/home/brucechen/nav_ws/install/include
-Libs: -L/home/brucechen/nav_ws/install/lib 
-Requires: message_runtime

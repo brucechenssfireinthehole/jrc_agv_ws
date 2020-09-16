@@ -1,8 +1,0 @@
-prefix=/home/brucechen/nav_ws/devel
-
-Name: yocs_velocity_smoother
-Description: Description of yocs_velocity_smoother
-Version: 0.8.2
-Cflags: -I/home/brucechen/nav_ws/devel/include -I/home/brucechen/nav_ws/src/yocs_velocity_smoother/include
-Libs: -L/home/brucechen/nav_ws/devel/lib -lyocs_velocity_smoother_nodelet
-Requires: roscpp pluginlib nodelet ecl_threads dynamic_reconfigure geometry_msgs nav_msgs

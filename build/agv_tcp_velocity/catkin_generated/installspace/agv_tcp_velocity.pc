@@ -1,8 +1,0 @@
-prefix=/home/brucechen/nav_ws/install
-
-Name: agv_tcp_velocity
-Description: Description of agv_tcp_velocity
-Version: 0.0.0
-Cflags: -I/home/brucechen/nav_ws/install/include
-Libs: -L/home/brucechen/nav_ws/install/lib 
-Requires: 

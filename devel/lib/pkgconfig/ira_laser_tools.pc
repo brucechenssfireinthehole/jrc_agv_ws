@@ -1,8 +1,0 @@
-prefix=/home/brucechen/nav_ws/devel
-
-Name: ira_laser_tools
-Description: Description of ira_laser_tools
-Version: 1.0.0
-Cflags: -I/home/brucechen/nav_ws/devel/include
-Libs: -L/home/brucechen/nav_ws/devel/lib 
-Requires: 

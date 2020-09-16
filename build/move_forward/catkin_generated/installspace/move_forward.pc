@@ -1,8 +1,0 @@
-prefix=/home/brucechen/nav_ws/install
-
-Name: move_forward
-Description: Description of move_forward
-Version: 0.0.0
-Cflags: -I/home/brucechen/nav_ws/install/include
-Libs: -L/home/brucechen/nav_ws/install/lib 
-Requires: message_runtime

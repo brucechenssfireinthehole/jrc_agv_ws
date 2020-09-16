@@ -1,8 +1,0 @@
-prefix=/home/brucechen/nav_ws/install
-
-Name: voxel_grid
-Description: Description of voxel_grid
-Version: 1.14.4
-Cflags: -I/home/brucechen/nav_ws/install/include
-Libs: -L/home/brucechen/nav_ws/install/lib -lvoxel_grid
-Requires: roscpp
